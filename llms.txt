@@ -1,0 +1,37 @@
+# Remote Gate Entanglement Cost
+
+Scientific question: What entanglement cost replaces a feedback-dependent classical message when implementing a remote controlled phase-gradient gate at a specified accuracy?
+
+## Main account
+
+- README.md: scientific overview, finite leading bounds, comparisons, figure, and direct reading routes.
+- science/model.md: authoritative operational model and notation. Alice has one control qubit, Bob has d=2^n dimensions, and the target is C_d controlled by Alice with Z_d phases exp(2 pi i j/d). One simultaneous exchange of classical messages is allowed. Arbitrary finite mixed resources, arbitrary finite quantum workspaces, local instruments, and local CPTP decoding are included.
+- science/converse.md: complete robust lower-bound proof, entropy lemmas, mixed-resource purification, fixed-environment Stinespring continuity, recovered Bob channel, cyclic twirl, Fourier extraction, convex roof, and leakage-safe restriction.
+- science/frontier.md: exact finite upper/lower bounds, the leading m=min(n,0.5 log2(1/epsilon)) law with logarithmic additive converse gap, explicit uniform Theta range, inherited exact costs, and limiting cases.
+- science/protocols.md: tapered noncyclic construction and exact dephasing formula; cyclic and interactive baseline protocols.
+- science/resource_accounting.md: offline preparation, local gates and workspace, message length, precision allocation, and distinction between entropy and Bell-pair count.
+- science/randomized_rounding.md: unbiased randomized spectral rounding plus the inherited cyclic protocol as an alternative upper bound; exact finite random threshold for the phase-gradient family.
+- science/interpretation.md: causal meaning, accuracy versus exact spectral distinctness, parameter regimes, construction intuition, and limitations.
+
+## Attribution and reproduction
+
+- references/RELATED_WORK.md: nearest exact lower bound, fast upper protocols, continuity tool, sine-state antecedents, and current non-local computation lower bounds in their actual communication models.
+- references/references.bib: structured bibliography with source versions.
+- verification/README.md: reproducibility instructions, numerical tolerances, expected output, and what finite checks establish.
+- verification/run_all.py: runs the physical protocol, finite bound, and phase-rounding checks.
+- verification/expected/results.json: a recorded reference run, including package versions and residuals.
+- verification/plot_frontier.py and figures/precision_frontier.svg: generator and rendered analytic bounds.
+
+## Questions to routes
+
+- What exactly is being optimized? Read science/model.md before comparing costs.
+- Why does the lower bound cover arbitrary mixed states and large memories? Read sections 2–7 of science/converse.md, especially the conditional probabilities and formal ensemble flag.
+- What is the strongest finite result? Read science/frontier.md, section 1, and maximize the finite converse over eligible power-of-two restrictions.
+- Is the tradeoff solved to an additive constant? No. The lower gap is O(log(m+1)); the leading coefficient is matched as m grows.
+- How is the resource prepared without hiding an exponential table? Read science/resource_accounting.md. The known-angle sine preparation and offline heralding are distinct from postselection on unknown gate inputs.
+- Is the upper coefficient itself a priority claim? Read science/randomized_rounding.md and references/RELATED_WORK.md. The robust converse and combined frontier are the substantive contribution.
+- Does the result apply to free quantum communication? No entanglement-only claim is made. Teleporting q sent qubits instead yields a joint E_F+q resource bound.
+
+## Essential conventions
+
+epsilon denotes HALF diamond distance, log and entropy use base two, and E_sim is the infimum entanglement of formation for one finite implementation. It is not a many-copy regularized cost. Integer Bell-pair count is separately identified. Resource formation is offline; the online communication is one simultaneous classical exchange. At fixed nonzero error the upper cost does not grow unboundedly with n. Exact n-ebit and interactive one-ebit costs are attributed prior results. Finite numerical checks do not certify the universal theorem. Known local powers/inverses and their synthesis precision are charged; no QRAM or unknown-unitary inverse oracle is assumed.
