@@ -1,0 +1,78 @@
+{
+  "environment": {
+    "python": "3.12.14",
+    "numpy": "2.3.5"
+  },
+  "protocols": {
+    "tapered_cases": 45,
+    "cyclic_cases": 3,
+    "offline_preparation_ranks": [
+      2,
+      4,
+      8,
+      16
+    ],
+    "tolerance": 2e-11,
+    "maximum_residuals": {
+      "channel_residual": 1.7154532641113372e-15,
+      "trace_preservation_residual": 1.5757053192718236e-15,
+      "half_trace_witness_residual": 5.134781488891349e-16,
+      "sine_identity_residual": 2.220446049250313e-16,
+      "cyclic_channel_residual": 1.2658490090568385e-15,
+      "offline_preparation_residual": 2.220446049250313e-16,
+      "preparation_success_residual": 1.1102230246251565e-16
+    }
+  },
+  "bounds": {
+    "finite_bound_cases": 12288,
+    "minimum_conservative_lower_margin": 4.0404954887157345,
+    "illustrative_bounds": [
+      {
+        "n": 32,
+        "accuracy_bits": 16,
+        "lower_ebits": 2.18872188,
+        "upper_ebits": 8.65463603,
+        "lower_restriction_bits": 4
+      },
+      {
+        "n": 32,
+        "accuracy_bits": 32,
+        "lower_ebits": 9.08143556,
+        "upper_ebits": 16.65150022,
+        "lower_restriction_bits": 11
+      },
+      {
+        "n": 32,
+        "accuracy_bits": 48,
+        "lower_ebits": 16.53770993,
+        "upper_ebits": 24.65149617,
+        "lower_restriction_bits": 18
+      },
+      {
+        "n": 32,
+        "accuracy_bits": 64,
+        "lower_ebits": 24.03770993,
+        "upper_ebits": 32.0,
+        "lower_restriction_bits": 26
+      },
+      {
+        "n": 32,
+        "accuracy_bits": 96,
+        "lower_ebits": 31.99710433,
+        "upper_ebits": 32.0,
+        "lower_restriction_bits": 32
+      }
+    ],
+    "scope": "Evaluation of proved inequalities; no universal converse is numerically certified."
+  },
+  "rounding": {
+    "phase_gradient_cases": 21,
+    "maximum_residuals": {
+      "mean_phase_error": 8.326672684688674e-16,
+      "finite_order_residual": 4.263256414560601e-14,
+      "averaged_matrix_unit_residual": 0.0
+    },
+    "scope": "Finite-order phases and exact bias cancellation; the uniform diamond estimate is proved analytically."
+  },
+  "result": "All finite checks passed"
+}
