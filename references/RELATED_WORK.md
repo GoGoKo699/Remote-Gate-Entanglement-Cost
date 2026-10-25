@@ -2,7 +2,7 @@
 
 The result developed here is a quantitative entanglement lower bound for a controlled phase-gradient gate when the parties have one simultaneous exchange of **classical** messages. It permits arbitrary finite mixed resource states and local quantum memories. Its proof extends the exact Fourier-extraction argument of Gonzales and Chitambar using continuity of unitary dilations and an entropy estimate that does not depend on workspace dimension.
 
-Write $`d=2^n`$, $`Z_d=\sum_{j=0}^{d-1}e^{2\pi i j/d}|j\rangle\langle j|`$, and $`C_d=|0\rangle\langle0|\otimes I+|1\rangle\langle1|\otimes Z_d`$. Throughout this repository, accuracy means $`\tfrac12\|\Lambda-\operatorname{Ad}_{C_d}\|_\diamond\le\epsilon`$, and entanglement of formation $`E_F`$ is measured in bits. This is the convex-roof measure introduced by [Bennett, DiVincenzo, Smolin, and Wootters](https://arxiv.org/abs/quant-ph/9604024v2), not an identification of every mixed state's one-shot preparation cost with its entanglement of formation. The [finite converse](../science/converse.md) has the form
+Write $`d=2^n`$, $`Z_d=\sum_{j=0}^{d-1}e^{2\pi i j/d}|j\rangle\langle j|`$, and $`C_d=|0\rangle\langle0|\otimes I+|1\rangle\langle1|\otimes Z_d`$. Throughout this repository, accuracy means $`\tfrac12\|\Lambda-\mathrm{Ad}_{C_d}\|_\diamond\le\epsilon`$, and entanglement of formation $`E_F`$ is measured in bits. This is the convex-roof measure introduced by [Bennett, DiVincenzo, Smolin, and Wootters](https://arxiv.org/abs/quant-ph/9604024v2), not an identification of every mixed state's one-shot preparation cost with its entanglement of formation. The [finite converse](../science/converse.md) has the form
 
 ```math
 E_F(\rho)\ge (1-\alpha_r)\log_2 r-h_2(\alpha_r),
@@ -62,7 +62,7 @@ For a fixed dilation $`F`$ of the protocol and a unitary target $`U`$, this yiel
 
 ```math
 \|F-U\otimes|\gamma\rangle\|_\infty
-\le\sqrt{2\|\Lambda-\operatorname{Ad}_U\|_\diamond}
+\le\sqrt{2\|\Lambda-\mathrm{Ad}_U\|_\diamond}
 \le2\sqrt\epsilon.
 ```
 
@@ -98,12 +98,12 @@ The output mutual information varies by at most one. Their correlation lower bou
 Definition 17 of the cited version requires one test output to be exactly separable. For a reference on Alice's qubit, the other output's entanglement of formation is at most one. For a reference maximally entangled with Bob's target, every reduced reference–target output is supported on
 
 ```math
-\operatorname{span}\left\{
+\mathrm{span}\left\{
 |\Phi_d\rangle,(I\otimes Z_d)|\Phi_d\rangle
 \right\}.
 ```
 
-These two vectors are orthogonal. Let $`P`$ project onto their span. A separable state $`\sigma`$ obeys $`\operatorname{Tr}(P\sigma)\le2/d`$, because its overlap with either maximally entangled vector is at most $`1/d`$. Every such output $`\omega_p`$ therefore satisfies
+These two vectors are orthogonal. Let $`P`$ project onto their span. A separable state $`\sigma`$ obeys $`\mathrm{Tr}(P\sigma)\le2/d`$, because its overlap with either maximally entangled vector is at most $`1/d`$. Every such output $`\omega_p`$ therefore satisfies
 
 ```math
 \inf_{\sigma\in\mathrm{SEP}}\|\omega_p-\sigma\|_1

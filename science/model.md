@@ -25,7 +25,7 @@ This is a concrete arithmetic family. With the little-endian expansion $`j=\sum_
 
 ```math
 Z_d=\bigotimes_{\ell=0}^{n-1}
-\operatorname{diag}\!\left(1,e^{2\pi i 2^{\ell-n}}\right).
+\mathrm{diag}\!\left(1,e^{2\pi i 2^{\ell-n}}\right).
 ```
 
 Thus $`C_d`$ is a product of controlled phase rotations between Alice's one control and Bob's individual qubits. The model assumes the target is known; it does not assume an oracle for an unknown unitary or a free inverse oracle. The [implementation account](resource_accounting.md) charges the required local rotations and their precision.
@@ -62,7 +62,7 @@ For a pure resource $`|\eta\rangle`$, its entanglement is the entropy of either 
 ```math
 E_F(\rho)=\inf_{\{p_\lambda,|\eta_\lambda\rangle\}}
 \sum_\lambda p_\lambda
-S\!\left(\operatorname{Tr}_{A'}|\eta_\lambda\rangle\langle\eta_\lambda|\right),
+S\!\left(\mathrm{Tr}_{A'}|\eta_\lambda\rangle\langle\eta_\lambda|\right),
 \qquad
 \rho=\sum_\lambda p_\lambda|\eta_\lambda\rangle\langle\eta_\lambda|.
 ```

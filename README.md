@@ -45,6 +45,12 @@ Start with the [target, operational model, and resource definitions](science/mod
 
 [The LLM reading guide](llms.txt) maps scientific questions to their authoritative files.
 
+## Learn the project
+
+The [30-milestone map](learning/MILESTONES.md) develops 13 background targets followed by 17 targets through the scientific argument. Both phases move from individual objects and mechanisms to the complete operational picture.
+
+The single educational anchor is John Watrous, [*The Theory of Quantum Information*](https://cs.uwaterloo.ca/~watrous/TQI/) (2018). The [Watrous bridge](learning/WATROUS_BRIDGE.md) identifies the relevant sections, connects their definitions to this project's proof and constructions, and works through a small remote-gate example. It also identifies the additional primary results needed beyond the book. The milestone map describes the project's understanding targets; the linked science files contain the full claims and proofs.
+
 ## Mechanism
 
 The construction correlates Alice's control with a one-step shift of the shared resource. After the simultaneous exchange and local corrections, the remaining error is exactly control dephasing. A sine-shaped resource profile has overlap

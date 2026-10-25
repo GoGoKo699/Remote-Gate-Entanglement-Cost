@@ -66,7 +66,7 @@ With $`c_k=0`$ outside the range in (4), the corrected Kraus operator for outcom
 ```math
 K_{jq}
 =\frac1{\sqrt R}
-  \bigl(\operatorname{diag}(c_j,c_{j+1})\otimes I\bigr)C(U).
+  \bigl(\mathrm{diag}(c_j,c_{j+1})\otimes I\bigr)C(U).
 \tag{5}
 ```
 
@@ -92,8 +92,8 @@ Thus the residual channel on the control is
 
 ```math
 \mathcal D_{f_R}
-=\frac{1+f_R}{2}\operatorname{id}
- +\frac{1-f_R}{2}\operatorname{Ad}_{Z_2}.
+=\frac{1+f_R}{2}\mathrm{id}
+ +\frac{1-f_R}{2}\mathrm{Ad}_{Z_2}.
 ```
 
 Since the identity and Pauli-$`Z`$ channels have full diamond distance two, the **half** diamond error of the construction is exactly
@@ -117,7 +117,7 @@ E_F(|\eta_R\rangle\langle\eta_R|)
 
 Choosing $`R=R_\epsilon`$ in (7) proves the logarithmic branch of (2).
 
-**Exact cyclic upper bound.** For $`U=Z_d`$, use a maximally entangled state of Schmidt rank $`d`$ and replace the shift above by a cyclic shift modulo $`d`$. Because $`Z_d^d=I`$, the wraparound introduces no error. The corrected branch operators are global phases times $`C_d/d`$, so the channel is exactly $`\operatorname{Ad}_{C_d}`$ and the resource has $`n`$ ebits. This is a specialization of the finite-group protocols of [Yu, Griffiths, and Cohen](https://arxiv.org/abs/1109.5013) and [Yu](https://arxiv.org/abs/1112.0307). It proves the other branch of (2). ∎
+**Exact cyclic upper bound.** For $`U=Z_d`$, use a maximally entangled state of Schmidt rank $`d`$ and replace the shift above by a cyclic shift modulo $`d`$. Because $`Z_d^d=I`$, the wraparound introduces no error. The corrected branch operators are global phases times $`C_d/d`$, so the channel is exactly $`\mathrm{Ad}_{C_d}`$ and the resource has $`n`$ ebits. This is a specialization of the finite-group protocols of [Yu, Griffiths, and Cohen](https://arxiv.org/abs/1109.5013) and [Yu](https://arxiv.org/abs/1112.0307). It proves the other branch of (2). ∎
 
 Equation (2) is an upper bound on preshared entanglement of formation with ideal local operations. Controlled powers, state preparation, Fourier transforms, and their approximation errors must also be charged in an implementation. They are accounted for separately in [resource accounting](resource_accounting.md); no efficient implementation of an arbitrary black-box unitary's powers is assumed by (2).
 
