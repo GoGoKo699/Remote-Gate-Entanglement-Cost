@@ -22,9 +22,15 @@ Scientific question: What entanglement cost replaces a feedback-dependent classi
 - verification/expected/results.json: a recorded reference run, including package versions and residuals.
 - verification/plot_frontier.py and figures/precision_frontier.svg: generator and rendered analytic bounds.
 
+## Learning route
+
+- learning/MILESTONES.md: exactly 30 project-defined understanding targets, with 13 background milestones followed by 17 scientific narrative milestones. Each record includes its question, understanding target, earlier dependencies and role, conceptual connection, and source pointers.
+- learning/WATROUS_BRIDGE.md: the single educational anchor, John Watrous's The Theory of Quantum Information (2018), with exact section pointers, the translation to this project's notation and operational model, a worked finite example, and the additional primary results needed beyond the book. The anchor manuscript is linked at its author's site, not redistributed.
+
 ## Questions to routes
 
 - What exactly is being optimized? Read science/model.md before comparing costs.
+- How do the background ideas lead to the actual proof and constructions? Use learning/MILESTONES.md with learning/WATROUS_BRIDGE.md, then follow each milestone's science pointers.
 - Why does the lower bound cover arbitrary mixed states and large memories? Read sections 2–7 of science/converse.md, especially the conditional probabilities and formal ensemble flag.
 - What is the strongest finite result? Read science/frontier.md, section 1, and maximize the finite converse over eligible power-of-two restrictions.
 - Is the tradeoff solved to an additive constant? No. The lower gap is O(log(m+1)); the leading coefficient is matched as m grows.

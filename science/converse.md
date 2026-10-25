@@ -6,7 +6,7 @@ The operational definitions are collected in [the model](model.md). The resultin
 
 ## 1. Statement and conventions
 
-All logarithms are base two. The von Neumann entropy is $`S(\rho)=-\operatorname{Tr}(\rho\log_2\rho)`$, and $`h_2(t)=-t\log_2t-(1-t)\log_2(1-t)`$, with the usual continuous values at zero and one. Write $`\operatorname{Ad}_V(X)=VXV^\dagger`$.
+All logarithms are base two. The von Neumann entropy is $`S(\rho)=-\mathrm{Tr}(\rho\log_2\rho)`$, and $`h_2(t)=-t\log_2t-(1-t)\log_2(1-t)`$, with the usual continuous values at zero and one. Write $`\mathrm{Ad}_V(X)=VXV^\dagger`$.
 
 Alice holds a qubit $`A`$. Bob holds a register $`B`$ of dimension $`d=2^n`$, where $`n\ge1`$. The target is
 
@@ -22,7 +22,7 @@ An admissible protocol starts with a state $`\rho_{A'B'}`$ independent of the in
 Accuracy is measured on the unconditional output channel, including inputs entangled with an arbitrary reference:
 
 ```math
-\frac12\|\Lambda-\operatorname{Ad}_{C_d}\|_\diamond\le\epsilon.
+\frac12\|\Lambda-\mathrm{Ad}_{C_d}\|_\diamond\le\epsilon.
 \tag{1}
 ```
 
@@ -33,7 +33,7 @@ E_F(\rho_{A'B'})
 =\inf_{\rho=\sum_\lambda p_\lambda
                   |\eta_\lambda\rangle\langle\eta_\lambda|}
   \sum_\lambda p_\lambda
-  S\!\left(\operatorname{Tr}_{A'}
+  S\!\left(\mathrm{Tr}_{A'}
        |\eta_\lambda\rangle\langle\eta_\lambda|\right).
 \tag{2}
 ```
@@ -168,7 +168,7 @@ Fix an arbitrary finite pure-state ensemble in (2), and abbreviate
 
 ```math
 \eta_{\lambda,B'}
-=\operatorname{Tr}_{A'}|\eta_\lambda\rangle\langle\eta_\lambda|.
+=\mathrm{Tr}_{A'}|\eta_\lambda\rangle\langle\eta_\lambda|.
 ```
 
 All bounds below hold for this ensemble without assuming that its label is available to either party.
@@ -231,7 +231,7 @@ Expand this one common vector as
  |\gamma_{\lambda ab}\rangle_{E_AE_B},
 \qquad
 \gamma^B_{\lambda ab}
-=\operatorname{Tr}_{E_A}
+=\mathrm{Tr}_{E_A}
   |\gamma_{\lambda ab}\rangle\langle\gamma_{\lambda ab}|.
 \tag{14}
 ```
@@ -263,7 +263,7 @@ Fix Alice's input to $`|x\rangle`$, where $`x\in\{0,1\}`$. For the actual dilati
 
 Crucially, (15) does not depend on $`x`$. Bob's decoder has been undone; Alice's decoder disappears under a partial trace; and summing over $`a`$ uses the first completeness identity in (10). This last step is the no-signalling property of Alice's trace-preserving local operation. It holds separately for each ensemble component and with a reference attached to Bob's input.
 
-For the ideal dilation, the same processing gives $`\mathcal T\circ\operatorname{Ad}_{Z_d^x}`$, where
+For the ideal dilation, the same processing gives $`\mathcal T\circ\mathrm{Ad}_{Z_d^x}`$, where
 
 ```math
 \mathcal T(X)
@@ -276,7 +276,7 @@ For the ideal dilation, the same processing gives $`\mathcal T\circ\operatorname
 Both $`\mathcal R`$ and $`\mathcal T`$ are CPTP. For (16), complete positivity is immediate and trace preservation follows from
 
 ```math
-\sum_{\lambda,a,b}\operatorname{Tr}\gamma^B_{\lambda ab}=1.
+\sum_{\lambda,a,b}\mathrm{Tr}\gamma^B_{\lambda ab}=1.
 ```
 
 The isometry bound and common postprocessing now give
@@ -284,14 +284,14 @@ The isometry bound and common postprocessing now give
 ```math
 \|\mathcal R-\mathcal T\|_\diamond\le2\kappa,
 \qquad
-\|\mathcal R-\mathcal T\circ\operatorname{Ad}_{Z_d}\|_\diamond
+\|\mathcal R-\mathcal T\circ\mathrm{Ad}_{Z_d}\|_\diamond
 \le2\kappa.
 ```
 
 Taking their difference yields the approximate invariance
 
 ```math
-\|\mathcal T-\mathcal T\circ\operatorname{Ad}_{Z_d}\|_\diamond
+\|\mathcal T-\mathcal T\circ\mathrm{Ad}_{Z_d}\|_\diamond
 \le4\kappa.
 \tag{17}
 ```
@@ -300,7 +300,7 @@ The same environment vector in the two comparisons is essential. It is supplied 
 
 ## 5. Cyclic averaging removes coherences
 
-Put $`\mathcal A=\operatorname{Ad}_{Z_d}`$. Its cyclic average is computational-basis dephasing:
+Put $`\mathcal A=\mathrm{Ad}_{Z_d}`$. Its cyclic average is computational-basis dephasing:
 
 ```math
 \mathcal D_d
@@ -403,17 +403,17 @@ Every normalized, nonzero block of $`\sigma`$ has largest eigenvalue at most $`1
 
 ```math
 \gamma^B_{\lambda ab}
-\le(\operatorname{Tr}\gamma^B_{\lambda ab})I_{E_B}.
+\le(\mathrm{Tr}\gamma^B_{\lambda ab})I_{E_B}.
 ```
 
 Conjugation by the unitary $`V_{ab}`$, followed by summation over $`a`$, shows that the block $`\sigma_{\lambda bt}`$ in (23) satisfies
 
 ```math
 \sigma_{\lambda bt}
-\le\frac{\sum_a\operatorname{Tr}\gamma^B_{\lambda ab}}{d^2}I_{K_B},
+\le\frac{\sum_a\mathrm{Tr}\gamma^B_{\lambda ab}}{d^2}I_{K_B},
 \qquad
-q_{\lambda bt}:=\operatorname{Tr}\sigma_{\lambda bt}
-=\frac1d\sum_a\operatorname{Tr}\gamma^B_{\lambda ab}.
+q_{\lambda bt}:=\mathrm{Tr}\sigma_{\lambda bt}
+=\frac1d\sum_a\mathrm{Tr}\gamma^B_{\lambda ab}.
 ```
 
 Hence
@@ -425,7 +425,7 @@ Hence
 \tag{25}
 ```
 
-Let $`p_{\lambda bt}=\operatorname{Tr}\omega_{\lambda bt}`$. If $`\alpha_d=2d\kappa=4d\sqrt\epsilon\le1/2`$, Lemma 3 applies to (22)–(25) and gives
+Let $`p_{\lambda bt}=\mathrm{Tr}\omega_{\lambda bt}`$. If $`\alpha_d=2d\kappa=4d\sqrt\epsilon\le1/2`$, Lemma 3 applies to (22)–(25) and gives
 
 ```math
 \sum_{\lambda,b,t}p_{\lambda bt}
@@ -483,12 +483,12 @@ To account for leakage in an approximate protocol, use the CPTP decoder
 ```math
 \mathcal Q_r(Y)
 =J_r^\dagger YJ_r
- +\operatorname{Tr}[(I_B-J_rJ_r^\dagger)Y]
+ +\mathrm{Tr}[(I_B-J_rJ_r^\dagger)Y]
    |0\rangle\langle0|.
 \tag{29}
 ```
 
-Compose the original protocol with $`J_r`$ before Bob's instrument and $`\mathcal Q_r`$ after his decoder. These are local changes and use exactly the same preshared resource and communication pattern. By (28), the ideal composed channel is $`\operatorname{Ad}_{C_r}`$. Diamond-norm contraction under CPTP pre- and postprocessing preserves (1), with $`d`$ replaced by $`r`$.
+Compose the original protocol with $`J_r`$ before Bob's instrument and $`\mathcal Q_r`$ after his decoder. These are local changes and use exactly the same preshared resource and communication pattern. By (28), the ideal composed channel is $`\mathrm{Ad}_{C_r}`$. Diamond-norm contraction under CPTP pre- and postprocessing preserves (1), with $`d`$ replaced by $`r`$.
 
 Applying (27) to this smaller target proves (4) for every stated $`r`$. Since the bound holds for every admissible resource, taking the infimum over protocols yields (5). ∎
 

@@ -111,7 +111,7 @@ She sends the $`w`$-bit value $`s`$ to Bob **offline**. Both parties cyclically 
 Equivalently, Alice has implemented the diagonal instrument
 
 ```math
-M_s=\operatorname{diag}_{k=0}^{R-1}(c_{k+s\bmod R}),
+M_s=\mathrm{diag}_{k=0}^{R-1}(c_{k+s\bmod R}),
 \qquad \sum_s M_s^\dagger M_s=I.
 ```
 
@@ -122,7 +122,7 @@ The same construction applies to any normalized coefficient vector. In particula
 For completeness, take any integer rank $`R`$, put $`w=\lceil\log_2R\rceil`$ and $`N=2^w`$, and define a normalized padded vector $`a_t=c_t`$ for $`0\le t<R`$ and $`a_t=0`$ otherwise. Starting from $`w`$ Bell pairs, use $`|\Phi_N\rangle`$ and the instrument
 
 ```math
-M_s=\operatorname{diag}_{k=0}^{N-1}(a_{k+s\bmod N}),
+M_s=\mathrm{diag}_{k=0}^{N-1}(a_{k+s\bmod N}),
 \qquad s=0,\ldots,N-1,
 \qquad \sum_s M_s^\dagger M_s=I_N.
 ```
@@ -180,7 +180,7 @@ After learning $`j`$, Bob implements $`Z_{2^n}^{-j}`$ with at most $`n`$ single-
 ```math
 Z_{2^n}^{-j}
 =\bigotimes_{t=0}^{n-1}
-\operatorname{diag}\!\left(1,e^{-2\pi i j2^{t-n}}\right).
+\mathrm{diag}\!\left(1,e^{-2\pi i j2^{t-n}}\right).
 ```
 
 The angles are computed from the known classical integer $`j`$ and reduced modulo $`2\pi`$. Alice's correction is one phase rotation with angle $`2\pi q/R`$. Including Bob's Fourier transform and local arithmetic, the online circuit uses
@@ -256,19 +256,19 @@ If the exact cyclic protocol has lower Bell-pair cost, it has no intrinsic appro
 The preceding counts allow specified single-qubit rotations, CNOTs, and reversible arithmetic gates. Before synthesis, decompose the phase and controlled-rotation gates into $`SU(2)`$ rotations $`R_z(\theta)=e^{-i\theta Z/2}`$, $`R_y(\theta)=e^{-i\theta Y/2}`$, and Clifford gates. For example,
 
 ```math
-P(\theta)=\operatorname{diag}(1,e^{i\theta})
+P(\theta)=\mathrm{diag}(1,e^{i\theta})
 =e^{i\theta/2}R_z(\theta),
 ```
 
 and the two-qubit controlled phase satisfies
 
 ```math
-\operatorname{CP}(\theta)
+\mathrm{CP}(\theta)
 =e^{i\theta/4}
 \bigl[R_z(\theta/2)\otimes R_z(\theta/2)\bigr]
-\operatorname{CNOT}
+\mathrm{CNOT}
 \bigl[I\otimes R_z(-\theta/2)\bigr]
-\operatorname{CNOT}.
+\mathrm{CNOT}.
 ```
 
 The scalar in each equality is a global phase of the entire unconditionally applied operation and has no channel effect. Controlled $`R_y`$ similarly decomposes into two unconditionally applied $`R_y`$ rotations and two CNOTs. These decompositions preserve all relative phases of the controlled operations. In particular, the known phase defining $`C(V)`$ is retained before decomposition; an unknown phase of a controlled-$`V`$ oracle cannot be ignored. Reversible arithmetic uses Clifford and Toffoli gates, and Toffoli has an exact Clifford+T decomposition.

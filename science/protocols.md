@@ -9,9 +9,9 @@ C(V)=|0\rangle\langle0|_A\otimes I_B
      +|1\rangle\langle1|_A\otimes V_B.
 ```
 
-The unitary $`V`$ is known, including the phase convention that fixes its controlled version. All the constructions below preserve arbitrary entanglement of the input with an untouched reference. Error always means half diamond distance. Offline resource preparation is completed before the unknown input arrives.
+The unitary $`V`$ is known, including the phase convention that fixes its controlled version. All correctness statements hold, to the stated channel error, for inputs entangled with an untouched reference. Error always means half diamond distance. Offline resource preparation is completed before the unknown input arrives.
 
-The phase of $`V`$ is relevant target data: for $`P(\phi)=\operatorname{diag}(1,e^{i\phi})`$,
+The phase of $`V`$ is relevant target data: for $`P(\phi)=\mathrm{diag}(1,e^{i\phi})`$,
 
 ```math
 C(e^{i\phi}V)=(P(\phi)\otimes I_B)C(V).
@@ -106,21 +106,21 @@ f(c)=\sum_{k=0}^{R-2}c_kc_{k+1}.
 Summing the corrected branches preserves both diagonal control blocks and multiplies each off-diagonal control block by $`f(c)`$. Therefore the implemented channel is exactly
 
 ```math
-\Lambda_c=(\mathcal D_{f(c)}\otimes\operatorname{Id}_B)
-\circ\operatorname{Ad}_{C(V)},
+\Lambda_c=(\mathcal D_{f(c)}\otimes\mathrm{Id}_B)
+\circ\mathrm{Ad}_{C(V)},
 \qquad
-\mathcal D_f=\frac{1+f}{2}\operatorname{Id}
-             +\frac{1-f}{2}\operatorname{Ad}_Z.
+\mathcal D_f=\frac{1+f}{2}\mathrm{Id}
+             +\frac{1-f}{2}\mathrm{Ad}_Z.
 ```
 
-Control dephasing commutes with $`C(V)`$. Since $`\|\operatorname{Ad}_Z-\operatorname{Id}\|_\diamond=2`$, the error is
+Control dephasing commutes with $`C(V)`$. Since $`\|\mathrm{Ad}_Z-\mathrm{Id}\|_\diamond=2`$, the error is
 
 ```math
-\epsilon(c)=\frac12\|\Lambda_c-\operatorname{Ad}_{C(V)}\|_\diamond
+\epsilon(c)=\frac12\|\Lambda_c-\mathrm{Ad}_{C(V)}\|_\diamond
 =\frac{1-f(c)}{2}.
 ```
 
-The equality follows both from the Pauli-mixture upper bound and from the perfectly distinguishable outputs of $`\operatorname{Id}`$ and $`\operatorname{Ad}_Z`$ on $`|+\rangle`$. Unitary invariance removes $`C(V)`$. The expression is independent of Bob's dimension and of the spectrum of $`V`$.
+The equality follows both from the Pauli-mixture upper bound and from the perfectly distinguishable outputs of $`\mathrm{Id}`$ and $`\mathrm{Ad}_Z`$ on $`|+\rangle`$. Unitary invariance removes $`C(V)`$. The expression is independent of Bob's dimension and of the spectrum of $`V`$.
 
 ### Optimal profile within this protocol
 
@@ -166,7 +166,7 @@ Share
 |\Phi_D\rangle_{ab}=\frac1{\sqrt D}\sum_{k=0}^{D-1}|k,k\rangle.
 ```
 
-Alice subtracts her control modulo $`D`$ from $`a`$, measures $`a`$, and obtains $`j\in\mathbb Z_D`$. Independently, Bob applies $`\sum_k|k\rangle\langle k|\otimes V^k`$ and Fourier-measures $`b`$, obtaining $`q\in\mathbb Z_D`$. They exchange $`j,q`$ simultaneously. Bob applies $`V^{-j}`$ and Alice applies $`\operatorname{diag}(1,e^{2\pi iq/D})`$.
+Alice subtracts her control modulo $`D`$ from $`a`$, measures $`a`$, and obtains $`j\in\mathbb Z_D`$. Independently, Bob applies $`\sum_k|k\rangle\langle k|\otimes V^k`$ and Fourier-measures $`b`$, obtaining $`q\in\mathbb Z_D`$. They exchange $`j,q`$ simultaneously. Bob applies $`V^{-j}`$ and Alice applies $`\mathrm{diag}(1,e^{2\pi iq/D})`$.
 
 Here $`k=j+x\pmod D`$ and $`V^D=I`$ imply $`V^k=V^{j+x}`$ even on the wrap-around branch. The Fourier phase is also periodic. Every corrected branch is therefore
 
@@ -174,7 +174,7 @@ Here $`k=j+x\pmod D`$ and $`V^D=I`$ imply $`V^k=V^{j+x}`$ even on the wrap-aroun
 K^{\mathrm{cyc}}_{j,q}=\frac{e^{-2\pi iqj/D}}{D}\,C(V).
 ```
 
-There are $`D^2`$ branches, each with probability $`1/D^2`$ for every input, so the implemented channel is exactly $`\operatorname{Ad}_{C(V)}`$. The resource entanglement is $`\log_2D`$ and each message has $`D`$ possible values.
+There are $`D^2`$ branches, each with probability $`1/D^2`$ for every input, so the implemented channel is exactly $`\mathrm{Ad}_{C(V)}`$. The resource entanglement is $`\log_2D`$ and each message has $`D`$ possible values.
 
 For the phase-gradient family $`V=Z_d`$, choose $`D=d=2^n`$. This uses exactly $`n`$ Bell pairs and $`n`$ classical bits in each direction. Combining this construction with the sine protocol gives
 

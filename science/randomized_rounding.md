@@ -47,7 +47,7 @@ Conjugation by $`e^{isH_t}`$ is a channel of diamond norm one. Therefore
 Averaging cancels the linear term exactly. If $`\overline\Lambda`$ is the channel obtained after forgetting the threshold record, unitary invariance and convexity give
 
 ```math
-\frac12\|\overline\Lambda-\operatorname{Ad}_{C(V)}\|_\diamond
+\frac12\|\overline\Lambda-\mathrm{Ad}_{C(V)}\|_\diamond
 \le h^2=\frac{4\pi^2}{D^2}.
 ```
 
