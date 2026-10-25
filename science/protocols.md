@@ -41,23 +41,23 @@ Set $`c_k=0`$ outside this interval. Alice holds $`a`$ and Bob holds $`b`$. Let 
 
 **Before exchanging messages**, the parties perform the following independent local operations.
 
-1. Alice applies the controlled noncyclic translation
+**Alice's local operation.** Alice applies the controlled noncyclic translation
 
-   ```math
-   |x\rangle_A|k\rangle_a\longmapsto
-   |x\rangle_A|k-x\rangle_a,
-   \qquad x\in\{0,1\}.
-   ```
+```math
+|x\rangle_A|k\rangle_a\longmapsto
+|x\rangle_A|k-x\rangle_a,
+\qquad x\in\{0,1\}.
+```
 
-   Its output labels are $`-1,0,\ldots,R-1`$. This is an isometry on the occupied input subspace and has a local unitary extension after padding. Alice measures this register and records $`j`$.
+Its output labels are $`-1,0,\ldots,R-1`$. This is an isometry on the occupied input subspace and has a local unitary extension after padding. Alice measures this register and records $`j`$.
 
-2. Bob applies the known local multiplexed unitary
+**Bob's local operation.** Bob applies the known local multiplexed unitary
 
-   ```math
-   M_V=\sum_{k=0}^{R-1}|k\rangle\langle k|_b\otimes V^k_B,
-   ```
+```math
+M_V=\sum_{k=0}^{R-1}|k\rangle\langle k|_b\otimes V^k_B,
+```
 
-   then measures $`b`$ in the Fourier basis and records $`q`$.
+then measures $`b`$ in the Fourier basis and records $`q`$.
 
 Alice sends $`j`$ and Bob sends $`q`$ in one simultaneous classical exchange. Neither preceding operation uses the remote outcome. **After receiving the messages**, Bob applies $`V^{-j}`$ and Alice applies
 

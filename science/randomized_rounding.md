@@ -9,7 +9,7 @@ The tapered protocol has a particularly simple exact error channel. The leading 
 Let $`V=\sum_j e^{i\theta_j}|v_j\rangle\langle v_j|`$ be known. Choose an integer $`D\ge2`$ and let $`h=2\pi/D`$. Write $`\theta_j/h=a_j+b_j`$, with integer $`a_j`$ and $`0\le b_j<1`$. For one shared random threshold $`t\in[0,1)`$, define
 
 ```math
-\widetilde\theta_j(t)=h\bigl(a_j+\mathbf1_{t<b_j}\bigr),
+\widetilde\theta_j(t)=h\bigl(a_j+\mathbf{1}_{t\lt b_j}\bigr),
 \quad
 \Delta_j(t)=\widetilde\theta_j(t)-\theta_j.
 ```
@@ -62,12 +62,12 @@ For $`d=2^n`$, choose $`D=2^q`$ with $`q\le n`$ and set $`M=2^{n-q}`$. Express B
 ```math
 \widetilde Z_{d,t}|aM+b\rangle
 =\exp\!\left[\frac{2\pi i}{D}
-\bigl(a+\mathbf1_{t<b}\bigr)\right]|aM+b\rangle.
+\bigl(a+\mathbf{1}_{t\lt b}\bigr)\right]|aM+b\rangle.
 ```
 
 The probability of rounding upward is exactly $`b/M`$, so the same cancellation holds without real-valued random data. The threshold requires $`n-q`$ shared random bits, obtained offline. For $`q=n`$, there is no rounding and the exact $`n`$-ebit protocol is recovered.
 
-This rounded gate also has an explicit local implementation. A reversible comparison computes $`c=\mathbf1_{t<b}`$ from the low bits into a local flag, using $`O(n-q)`$ Toffoli gates and work bits with a straightforward reversible comparator. The phase on $`a`$ is a product of known single-qubit phase rotations; the flag adds one more known phase. For a quantum power index $`k`$ of $`q`$ bits, the phase is
+This rounded gate also has an explicit local implementation. A reversible comparison computes $`c=\mathbf{1}_{t\lt b}`$ from the low bits into a local flag, using $`O(n-q)`$ Toffoli gates and work bits with a straightforward reversible comparator. The phase on $`a`$ is a product of known single-qubit phase rotations; the flag adds one more known phase. For a quantum power index $`k`$ of $`q`$ bits, the phase is
 
 ```math
 \exp\!\left(\frac{2\pi i k a}{D}\right)
